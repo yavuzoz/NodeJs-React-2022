@@ -31,10 +31,8 @@ const QuestionArea = () => {
   const checkAnswer = (e) => {
     if (e.target.className === e.target.innerHTML) {
       setTrueScore(trueScore + 1);
-      setCurrentQuestion(currentQuestion + 1);
     } else {
       setFalseScore(falseScore + 1);
-      setCurrentQuestion(currentQuestion + 1);
     }
   };
 

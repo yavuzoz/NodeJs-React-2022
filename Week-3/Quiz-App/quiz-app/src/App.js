@@ -1,4 +1,4 @@
-import "./App.css";
+
 
 import QuizAppArea from "./quiz-app-area/QuizAppArea";
 
