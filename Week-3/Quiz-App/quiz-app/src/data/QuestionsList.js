@@ -13,14 +13,14 @@ const QuestionsList = [
     },
     {
         id: 2,
-        question: `Ein Nomen erkennst du an der Adjektivprobe. Wähle ein passendes Beispiel aus:`,
+        question: `Ein Nomen erkennst du an der Adjektivprobe. Wähle ein passendes Beispiel aus: ?`,
         options: [`
         Wir spielen mit dem Ball.`, `Der Ball ist grün.`, `Wir spielen mit dem grünen Ball.`],
         answer: `Wir spielen mit dem grünen Ball.`
     },
     {
         id: 3,
-        question: `Nominalisierte Adjektive schreibt man klein.?`,
+        question: `Nominalisierte Adjektive schreibt man klein?`,
         options: [`
         Stimmt.`, `
         Stimmt nicht.`, `Das ist unterschiedlich.`],
@@ -29,8 +29,8 @@ const QuestionsList = [
     },
     {
         id: 4,
-        question: ``,
-        options: [``, ``, ``],
+        question: `finish`,
+        options: [`thank`, `you for `, `play`],
         answer: ``
     },
 ]

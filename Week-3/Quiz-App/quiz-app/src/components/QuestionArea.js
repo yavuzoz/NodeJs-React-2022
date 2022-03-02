@@ -9,6 +9,7 @@ import AnswerList from "./AnswerList";
 import Question from "./Question";
 import QuestionAmount from "./QuestionAmount";
 import NextQuestion from "./NextQuestion";
+import ScoreArea from "./ScoreArea";
 
 
 const QuestionArea = () => {
@@ -48,8 +49,9 @@ const QuestionArea = () => {
       </div>
       <div class="d-flex flex-row m-3">
         <Question Question={questions[currentQuestion].question} />
-        <AnswerList checkAnswer={checkAnswer} trueScore={trueScore} falseScore={falseScore} answerOption={questions[currentQuestion].options} answer={questions[currentQuestion].answer}/>
+        <AnswerList checkAnswer={checkAnswer}  answerOption={questions[currentQuestion].options} answer={questions[currentQuestion].answer}/>
       </div>
+      <ScoreArea falseScore={falseScore} trueScore={trueScore} />
     </>
   );
 };
