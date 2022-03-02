@@ -5,11 +5,11 @@ biraz zorlandim ama nihayetinde yaptim, selamlar.
 
 import React, { useState } from "react";
 import QuestionsList from "../data/QuestionsList";
-import AnswerList from "./AnswerList";
-import Question from "./Question";
-import QuestionAmount from "./QuestionAmount";
-import NextQuestion from "./NextQuestion";
-import ScoreArea from "./ScoreArea";
+import AnswerList from "../question-area/AnswerList";
+import Question from "../question-area/Question";
+import QuestionAmount from "../question-area/QuestionAmount";
+import NextQuestion from "../question-area/NextQuestion";
+import ScoreArea from "../question-area/ScoreArea";
 
 
 const QuestionArea = () => {
