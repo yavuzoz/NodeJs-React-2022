@@ -1,6 +1,6 @@
 import "./App.css";
 
-import QuizAppArea from "./components/QuizAppArea";
+import QuizAppArea from "./quiz-app-area/QuizAppArea";
 
 const App = () => {
 

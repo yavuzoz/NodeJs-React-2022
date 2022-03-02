@@ -1,7 +1,7 @@
 import React from "react";
-import NavComp from "../quiz-area/NavComp";
-import QuestionArea from "../quiz-area/QuestionArea";
-import FooterComp from "../quiz-area/FooterComp";
+import NavComp from "../quizApp-nav-main-footer/NavComp";
+import QuestionArea from "../quizApp-nav-main-footer/QuestionArea";
+import FooterComp from "../quizApp-nav-main-footer/FooterComp";
 
 function QuizAppArea() {
   return (
