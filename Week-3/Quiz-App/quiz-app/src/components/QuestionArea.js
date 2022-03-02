@@ -1,9 +1,15 @@
+/*
+biraz zorlandim ama nihayetinde yaptim, selamlar.
+*/
+
+
 import React, { useState } from "react";
 import QuestionsList from "../data/QuestionsList";
 import AnswerList from "./AnswerList";
 import Question from "./Question";
 import QuestionAmount from "./QuestionAmount";
 import NextQuestion from "./NextQuestion";
+
 
 const QuestionArea = () => {
   const NUMMERSQUIZ = QuestionsList.length-1;

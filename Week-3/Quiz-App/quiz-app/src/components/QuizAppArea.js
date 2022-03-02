@@ -1,19 +1,18 @@
-import React from 'react';
-import NavComp from './NavComp';
-import QuestionArea from './QuestionArea';
-
+import React from "react";
+import NavComp from "./NavComp";
+import QuestionArea from "./QuestionArea";
+import FooterComp from "./FooterComp";
 
 function QuizAppArea() {
   return (
     <main class="container w-100 h-50">
-        <div className='navbar'>
-            <NavComp/>
-        </div>
-        <div className='question-area'>
-            <QuestionArea/>
-        </div>
-      </main>
-  )
+      <NavComp />
+      <div className="question-area">
+        <QuestionArea />
+      </div>
+      <FooterComp />
+    </main>
+  );
 }
 
-export default QuizAppArea
+export default QuizAppArea;
