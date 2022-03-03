@@ -2,7 +2,6 @@
 biraz zorlandim ama nihayetinde yaptim, selamlar.
 */
 
-
 import React, { useState } from "react";
 import QuestionsList from "../data/QuestionsList";
 import AnswerList from "../question-area/AnswerList";
@@ -12,12 +11,17 @@ import NextQuestion from "../question-area/NextQuestion";
 import ScoreArea from "../question-area/ScoreArea";
 
 
+
+
 const QuestionArea = () => {
   const NUMMERSQUIZ = QuestionsList.length-1;
   const [questions] = useState(QuestionsList);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [trueScore, setTrueScore] = useState(0);
   const [falseScore, setFalseScore] = useState(0);
+ 
+
+  
 
   const nextQuestion = () => {
     const nextQuestion = currentQuestion + 1;
@@ -31,8 +35,10 @@ const QuestionArea = () => {
   const checkAnswer = (e) => {
     if (e.target.className === e.target.innerHTML) {
       setTrueScore(trueScore + 1);
+      setCurrentQuestion(currentQuestion + 1);
     } else {
       setFalseScore(falseScore + 1);
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
 
