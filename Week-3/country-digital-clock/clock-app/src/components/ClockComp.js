@@ -1,39 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 
-const colors = {
-  Sea: "#a2ccb6",
-  Sand: "#fceeb5",
-  Peach: "#ee786e",
-};
-
-const timeTreeDifferentZone={
-  "Etc/GMT+12": "International Date Line West",
-  "Pacific/Midway": "Midway Island, Samoa",
-  "Pacific/Honolulu": "Hawaii",
-}
+const timeDifferentZone = ["Etc/GMT+12", "Pacific/Midway", "Pacific/Honolulu"];
 
 function ClockComp() {
-  const [clockState, setClockState] = useState();
-  const [color, setColor] = useState();
-
-  useEffect(() => {
-    document.body.style.background = color;
-  }, [color]);
+  const [clockState, setClockState] = useState("0");
 
   useEffect(() => {
     setInterval(() => {
       const date = new Date();
-      setClockState(date.toLocaleTimeString());
+      setClockState(
+        date.toLocaleString("en-us", {
+          timeZone: timeDifferentZone[clockState],
+          timeStyle: "full",
+          hourCycle: "h24",
+        })
+      );
     }, 1000);
   }, []);
-
   return (
     <Fragment>
-      <select value={color} onChange={(e) => setColor(e.target.value)}>
-        {Object.entries(colors).map(([name, value]) => (
-          <option key={`color--${name}`} value={value}>
-            ({name})----
+      <select
+        value={clockState}
+        onChange={(e) => setClockState(e.target.value)}
+      >
+        {Object.entries(timeDifferentZone).map(([name, value]) => (
+          <option key={`${name}`} value={value} >
+            {clockState}
           </option>
         ))}
       </select>
@@ -41,5 +34,4 @@ function ClockComp() {
     </Fragment>
   );
 }
-
 export default ClockComp;
