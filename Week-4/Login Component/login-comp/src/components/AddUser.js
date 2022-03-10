@@ -1,26 +1,40 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const AddUser = ({ addUser }) => {
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [state, setState] = useState({
+    userName: "",
+    email: "",
+    password: "",
+    cPassword: "",
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newUser = {
-      userName,
-      email,
-      password,
-    };
-    addUser(newUser);
-    clearInputs();
+  const [passMatch, setPassMatch] = useState(true);
+
+  useEffect(() => {
+    validatePassword();
+  }, [state]);
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
   };
 
-  const clearInputs = () => {
-    setUserName("");
-    setEmail("");
-    setPassword("");
+  const validatePassword = () => {
+    state.password === state.cPassword
+      ? setPassMatch(true)
+      : setPassMatch(false);
+  };
+
+ 
+  const createAccount = (e) => {
+    e.preventDefault();
+    validatePassword();
+    addUser(state)
+    
   };
 
   return (
@@ -28,46 +42,55 @@ const AddUser = ({ addUser }) => {
       <form className="form w-25">
         <div class="form-group">
           <input
+            aria-label="Name"
             type="text"
-            class="form-control m-3"
-            id="username"
-            placeholder="Username"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
+            className="form-control"
+            id="userName"
+            placeholder="Enter Username"
+            value={state.userName}
+            onChange={handleChange}
+            aria-required="true"
           />
         </div>
         <div class="form-group">
           <input
+            aria-label="Email"
             type="email"
-            class="form-control m-3"
-            id="e-mail"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            className="form-control"
+            id="email"
+            placeholder="Enter email"
+            value={state.email}
+            onChange={handleChange}
+            aria-required="true"
           />
         </div>
         <div class="form-group">
           <input
+            aria-label="Password"
             type="password"
-            class="form-control m-3"
-            id="inputPassword"
+            className="form-control"
+            id="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={state.password}
+            onChange={handleChange}
+            aria-required="true"
           />
         </div>
         <div class="form-group">
           <input
+            aria-label="Confirm Password"
             type="password"
-            class="form-control m-3"
-            id="inputPassword4"
-            placeholder="Password repeat"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            className={`form-control ${passMatch ? "" : "input-error-border"}`}
+            id="cPassword"
+            placeholder="Confirm Password"
+            value={state.cPassword}
+            onChange={handleChange}
+            aria-required="true"
+            aria-invalid={passMatch ? true : false}
           />
         </div>
         <div class="form-group m-4">
-          <button type="submit" class="btn btn-primary" onClick={handleSubmit}>
+          <button type="submit" class="btn btn-primary" onClick={createAccount}>
             Sign Up
           </button>
         </div>
