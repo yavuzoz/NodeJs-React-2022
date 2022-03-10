@@ -44,6 +44,7 @@ h1 {
 .app .search {
   text-align: center;
   padding: 1rem;
+  
 }
 
 .app input {
@@ -61,7 +62,7 @@ h1 {
 
 .container {
   max-width: 700px;
-  height: 700px;
+  height: 450px;
   margin: auto;
   padding: 0 1rem;
   position: relative;
@@ -79,8 +80,6 @@ h1 {
 .app .description {
   position: relative;
   right: -90%;
-  transform-origin: 0 0;
-  transform: rotate(269deg);
 }
 
 .app .bottom {
@@ -88,7 +87,6 @@ h1 {
   justify-content: space-evenly;
   text-align: center;
   width: 100%;
-  margin: 1rem auto;
   padding: 1rem;
   border-radius: 12px;
   background-color: rgba(255,255,255, 0.2);
