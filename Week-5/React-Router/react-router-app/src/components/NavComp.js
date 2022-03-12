@@ -1,17 +1,24 @@
 import React from 'react';
-import '../App.css';
 import { Link } from "react-router-dom";
+import "../App.css"
 
 function NavComp() {
-  return (
-    <nav>
+    return (
+      <nav>
         <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
-    </nav>
-  )
-}
+      </nav>
+    );
+  }
+  
 
 export default NavComp

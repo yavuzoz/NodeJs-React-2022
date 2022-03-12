@@ -1,3 +1,5 @@
+//eski ve yeni syntac'larin icinde kayboluyor insan bazen,
+
 import React from "react";
 import "./App.css";
 import NavComp from "./components/NavComp";
@@ -10,14 +12,15 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <NavComp />
+        <NavComp />
         <Routes>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
 export default App;
+
