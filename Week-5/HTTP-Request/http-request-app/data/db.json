@@ -1,44 +1,12 @@
 {
   "employee": [
     {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Meier",
-      "email": "john@hicoders.ch",
-      "password": "s34ret",
-      "about": "me about me"
-    },
-    {
-      "id": 2,
-      "firstName": "Mirjam",
-      "lastName": "Herrman",
-      "email": "mirjam@hicoders.ch",
-      "password": "s34ret",
-      "about": "I am crazy!"
-    },
-    {
-      "firstName": "bdvbb",
-      "lastName": "bvvdb",
-      "email": "vbvcb@fgvfg",
-      "password": "vbcvbv",
-      "about": "bvc",
-      "id": 3
-    },
-    {
-      "firstName": "Local",
-      "lastName": "Storage",
-      "email": "lostrg@gmail.com",
-      "password": "45345",
-      "about": "es ist ok!",
-      "id": 4
-    },
-    {
-      "firstName": "Local",
-      "lastName": "Storage",
-      "email": "lostrg@gmail.com",
-      "password": "45345",
-      "about": "es ist ok!",
-      "id": 5
+      "firstName": "fghn ghn",
+      "lastName": "hnhgfn",
+      "email": "hnhgn@ddfs",
+      "password": "vfdv",
+      "about": "vfd",
+      "id": 1
     }
   ]
 }

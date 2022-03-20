@@ -1,13 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-
 const AddUser = () => {
   const [newPerson, setNewPerson] = useState([])
   
   const handleSubmit = async (e) => {
     e.preventDefault()
-    fetch('http://localhost:8000/employee', {
+    fetch('http://localhost:3000/employee', {
       method: 'POST',
       body: JSON.stringify( newPerson ),
       headers: { 'Content-Type': 'application/json' },
