@@ -49,6 +49,7 @@ router.post('/employees/', function(req, res, next) {
   res.sendStatus(200);
 });
 
+//PUT
 router.put('/employees/:id', function(req, res, next) {
   const employee = personList.find(c=> c.id=== parseInt(req.params.id));
   if(employee) res.status(404).send("The EMPLOYEE with the given ID..")
@@ -65,5 +66,16 @@ router.put('/employees/:id', function(req, res, next) {
   res.send(employee);
 });
 
+//DELETE
+
+router.delete('/employees/:id', function(req, res, next) {
+  const employee = personList.find(c=> c.id=== parseInt(req.params.id));
+  if(!personList) res.status(404).send("The employee with the given ID was ..")
+  
+  const index = personList.indexOf(employee);
+  personList.splice(index, 1);
+
+  res.send(employee);
+});
 
 module.exports = router;
